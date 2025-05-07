@@ -5,7 +5,7 @@
       <div class="filter-item plant-dropdown" tabindex="0" (mousedown)="togglePlantDropdown()" (blur)="closePlantDropdown()">
         <label>Plant</label>
         <div class="custom-select" [class.open]="plantDropdownOpen">
-          <span>{{ selectedPlant?.name || '3100-Houston' }}</span>
+          <span>{{ selectedPlant.name || '3100-Houston' }}</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="dropdown-menu" *ngIf="plantDropdownOpen">
@@ -17,25 +17,27 @@
           </div>
         </div>
       </div>
-      <div class="filter-item unit-dropdown" tabindex="0" (mousedown)="toggleUnitDropdown()" (blur)="closeUnitDropdown()">
+
+      <div class="filter-item plant-dropdown" tabindex="0" (mousedown)="toggleUnitDropdown()" (blur)="closeUnitDropdown()">
         <label>Unit</label>
         <div class="custom-select" [class.open]="unitDropdownOpen">
-          <span>{{ selectedUnit?.name || 'All' }}</span>
+          <span>{{ selectedUnit.name || '3100-Houston' }}</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="dropdown-menu" *ngIf="unitDropdownOpen">
-          <div
-            class="dropdown-item"
-            *ngFor="let unit of units"
+          <div 
+            class="dropdown-item" 
+            *ngFor="let unit of units" 
             (mousedown)="selectUnit(unit); $event.stopPropagation()">
             {{ unit.name }}
           </div>
         </div>
       </div>
-      <div class="filter-item location-dropdown" tabindex="0" (mousedown)="toggleLocationDropdown()" (blur)="closeLocationDropdown()">
+      
+      <div class="filter-item plant-dropdown" tabindex="0" (mousedown)="toggleLocationDropdown()" (blur)="closeLocationDropdown()">
         <label>Location</label>
         <div class="custom-select" [class.open]="locationDropdownOpen">
-          <span>{{ selectedLocation?.name || 'All' }}</span>
+          <span>{{ selectedLocation.name || '3100-Houston' }}</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="dropdown-menu" *ngIf="locationDropdownOpen">
@@ -47,10 +49,10 @@
           </div>
         </div>
       </div>
-      <div class="filter-item asset-dropdown" tabindex="0" (mousedown)="toggleAssetDropdown()" (blur)="closeAssetDropdown()">
+      <div class="filter-item plant-dropdown" tabindex="0" (mousedown)="toggleAssetDropdown()" (blur)="closeAssetDropdown()">
         <label>Asset</label>
         <div class="custom-select" [class.open]="assetDropdownOpen">
-          <span>{{ selectedAsset?.name || 'Asset 1' }}</span>
+          <span>{{ selectedAsset.name || 'Asset 1' }}</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="dropdown-menu" *ngIf="assetDropdownOpen">
@@ -62,10 +64,10 @@
           </div>
         </div>
       </div>
-      <div class="filter-item category-dropdown" tabindex="0" (mousedown)="toggleCategoryDropdown()" (blur)="closeCategoryDropdown()">
+      <div class="filter-item plant-dropdown" tabindex="0" (mousedown)="toggleCategoryDropdown()" (blur)="closeCategoryDropdown()">
         <label>Category</label>
         <div class="custom-select" [class.open]="categoryDropdownOpen">
-          <span>{{ selectedCategory?.name || 'All' }}</span>
+          <span>{{ selectedCategory.name || 'All' }}</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="dropdown-menu" *ngIf="categoryDropdownOpen">

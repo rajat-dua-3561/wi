@@ -14,7 +14,7 @@
 
   .filter-group {
     display: flex;
-    gap: 15px;
+    gap: 8px;
   }
 
   .filter-item {
@@ -78,8 +78,9 @@
         padding: 8px 12px 8px 35px;
         border: 1px solid #d1d5db;
         border-radius: 4px;
-        width: 200px;
+        width: 140px;
         font-size: 14px;
+        background-color: #f0f0f0;
 
         &::placeholder {
           color: #9ca3af;
@@ -330,7 +331,7 @@
 
 .plant-dropdown {
   position: relative;
-  width: 260px;
+  width: 140px;
   cursor: pointer;
   outline: none;
 }
@@ -346,8 +347,17 @@
   font-size: 16px;
   transition: border 0.2s;
   min-height: 44px;
+  width: 100%;
   box-sizing: border-box;
   user-select: none;
+
+  span {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 5px;
+  }
 }
 
 .custom-select.open {
@@ -359,7 +369,7 @@
   position: absolute;
   top: 110%;
   left: 0;
-  width: 320px;
+  width: 200px;
   background: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 10px;

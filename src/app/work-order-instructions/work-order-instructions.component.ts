@@ -119,7 +119,7 @@ export class WorkOrderInstructionsComponent {
     { name: 'Maintenance Unit' },
     { name: 'Production Unit' }
   ];
-  selectedLocation: { name: string } | null = null; // Or initialize with a default if needed
+  selectedLocation = this.locations[0] // Or initialize with a default if needed
   locationDropdownOpen = false;
 
   // Properties for Asset dropdown
@@ -132,7 +132,7 @@ export class WorkOrderInstructionsComponent {
     { name: 'Greenville, South Carolina' },
     { name: 'Phoenix, Arizona' }
   ];
-  selectedAsset: { name: string } | null = { name: 'Asset 1' }; // Initialize to 'Asset 1'
+  selectedAsset= this.assets[0]; // Initialize to 'Asset 1'
   assetDropdownOpen = false;
 
   // New properties for Category dropdown
@@ -146,7 +146,7 @@ export class WorkOrderInstructionsComponent {
     { name: 'Logistics & Handling' },
     { name: 'Cleaning & Shutdown' }
   ];
-  selectedCategory: { name: string } | null = this.categories[0]; // Initialize to 'All'
+  selectedCategory= this.categories[0]; // Initialize to 'All'
   categoryDropdownOpen = false;
 
   // New properties for Unit dropdown
@@ -156,7 +156,7 @@ export class WorkOrderInstructionsComponent {
     { name: 'Unit 2' },
     { name: 'Unit 3' }
   ];
-  selectedUnit: { name: string } | null = this.units[0]; // Default to 'All'
+  selectedUnit = this.units[0]; // Default to 'All'
   unitDropdownOpen = false;
 
   togglePlantDropdown() {
@@ -237,6 +237,7 @@ export class WorkOrderInstructionsComponent {
 
   selectUnit(unit: any) {
     this.selectedUnit = unit;
+    console.log('Selected unit:', this.selectedUnit);
     this.unitDropdownOpen = false;
   }
   
