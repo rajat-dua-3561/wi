@@ -1,0 +1,184 @@
+<div class="container">
+  <!-- Header/Filter Section -->
+  <div class="filters">
+    <div class="filter-group">
+      <div class="filter-item plant-dropdown" tabindex="0" (mousedown)="togglePlantDropdown()" (blur)="closePlantDropdown()">
+        <label>Plant</label>
+        <div class="custom-select" [class.open]="plantDropdownOpen">
+          <span>{{ selectedPlant?.name || '3100-Houston' }}</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-menu" *ngIf="plantDropdownOpen">
+          <div 
+            class="dropdown-item" 
+            *ngFor="let plant of plants" 
+            (mousedown)="selectPlant(plant); $event.stopPropagation()">
+            {{ plant.name }}
+          </div>
+        </div>
+      </div>
+      <div class="filter-item unit-dropdown" tabindex="0" (mousedown)="toggleUnitDropdown()" (blur)="closeUnitDropdown()">
+        <label>Unit</label>
+        <div class="custom-select" [class.open]="unitDropdownOpen">
+          <span>{{ selectedUnit?.name || 'All' }}</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-menu" *ngIf="unitDropdownOpen">
+          <div
+            class="dropdown-item"
+            *ngFor="let unit of units"
+            (mousedown)="selectUnit(unit); $event.stopPropagation()">
+            {{ unit.name }}
+          </div>
+        </div>
+      </div>
+      <div class="filter-item location-dropdown" tabindex="0" (mousedown)="toggleLocationDropdown()" (blur)="closeLocationDropdown()">
+        <label>Location</label>
+        <div class="custom-select" [class.open]="locationDropdownOpen">
+          <span>{{ selectedLocation?.name || 'All' }}</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-menu" *ngIf="locationDropdownOpen">
+          <div 
+            class="dropdown-item" 
+            *ngFor="let location of locations" 
+            (mousedown)="selectLocation(location); $event.stopPropagation()">
+            {{ location.name }}
+          </div>
+        </div>
+      </div>
+      <div class="filter-item asset-dropdown" tabindex="0" (mousedown)="toggleAssetDropdown()" (blur)="closeAssetDropdown()">
+        <label>Asset</label>
+        <div class="custom-select" [class.open]="assetDropdownOpen">
+          <span>{{ selectedAsset?.name || 'Asset 1' }}</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-menu" *ngIf="assetDropdownOpen">
+          <div
+            class="dropdown-item"
+            *ngFor="let asset of assets"
+            (mousedown)="selectAsset(asset); $event.stopPropagation()">
+            {{ asset.name }}
+          </div>
+        </div>
+      </div>
+      <div class="filter-item category-dropdown" tabindex="0" (mousedown)="toggleCategoryDropdown()" (blur)="closeCategoryDropdown()">
+        <label>Category</label>
+        <div class="custom-select" [class.open]="categoryDropdownOpen">
+          <span>{{ selectedCategory?.name || 'All' }}</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-menu" *ngIf="categoryDropdownOpen">
+          <div
+            class="dropdown-item"
+            *ngFor="let category of categories"
+            (mousedown)="selectCategory(category); $event.stopPropagation()">
+            {{ category.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search">
+      <div class="search-input">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search...">
+      </div>
+      <button class="filter-button">
+        <i class="fas fa-sliders-h"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Create Options -->
+  <div class="create-options">
+    <div class="create-card">
+      <span class="icon-bg">
+        <i class="fas fa-video"></i>
+      </span>
+      <h3>
+        Create From Video
+        <span class="star-badge"><i class="fas fa-star"></i></span>
+      </h3>
+      <p>Convert your video content into step-by-step work instructions</p>
+    </div>
+    <div class="create-card">
+      <span class="icon-bg">
+        <i class="fas fa-file"></i>
+      </span>
+      <h3>
+        Create From Document
+        <span class="star-badge"><i class="fas fa-star"></i></span>
+      </h3>
+      <p>Import and convert existing documents into digital work instructions</p>
+    </div>
+    <div class="create-card">
+      <span class="icon-bg">
+        <i class="fas fa-plus"></i>
+      </span>
+      <h3>Create From Scratch</h3>
+      <p>Create work instructions from scratch, tailored to your workflow</p>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab-buttons">
+      <button *ngFor="let tab of tabs" 
+              [class.active]="selectedTab === tab"
+              (click)="selectedTab = tab">
+        {{tab}}
+      </button>
+    </div>
+  </div>
+
+  <!-- Status Filters -->
+  <div class="status-filters">
+    <div class="status-buttons">
+      <button [class.active]="selectedStatus === 'Published'" (click)="selectedStatus = 'Published'">Published</button>
+      <button [class.active]="selectedStatus === 'Draft'" (click)="selectedStatus = 'Draft'">Draft</button>
+      <button [class.active]="selectedStatus === 'Pending Review'" (click)="selectedStatus = 'Pending Review'">Pending Review</button>
+      <button [class.active]="selectedStatus === 'Favourites'" (click)="selectedStatus = 'Favourites'">Favourites</button>
+      <button [class.active]="selectedStatus === 'Archive'" (click)="selectedStatus = 'Archive'">Archive</button>
+    </div>
+    <div class="time-filters">
+      <button *ngFor="let filter of timeFilters" [class.active]="selectedTime === filter" (click)="selectedTime = filter">{{filter}}</button>
+      <button class="view-toggle" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'">
+        <i class="fas fa-th-list"></i>
+      </button>
+      <button class="view-toggle" [class.active]="viewMode === 'grid'" (click)="viewMode = 'grid'">
+        <i class="fas fa-th"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Work Order Grid -->
+  <div class="work-order-grid">
+    <div class="work-order-card" *ngFor="let order of workOrders">
+      <div class="card-image-wrapper">
+        <img [src]="order.image" [alt]="order.title">
+        <span class="favorite-star" *ngIf="order.favorite"><i class="fas fa-star"></i></span>
+        <span class="card-menu"><i class="fas fa-ellipsis-h"></i></span>
+      </div>
+      <div class="card-content">
+        <h4>{{order.title}}</h4>
+        <span class="type-badge" [ngClass]="order.type | lowercase">{{order.type}}</span>
+        <div class="card-footer">
+          <div class="author">
+            <i class="fas fa-user"></i>
+            <span>{{order.author}}</span>
+          </div>
+          <div class="date-time">
+            <i class="fas fa-calendar"></i>
+            <span>{{order.date}}</span>
+            <i class="fas fa-clock"></i>
+            <span>{{order.time}}</span>
+          </div>
+          <div class="version">
+            <i class="fas fa-code-branch"></i>
+            <span>Version {{order.version}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
