@@ -59,6 +59,7 @@
 
 .work-instruction-content {
   padding: 1rem;
+  position: relative;
 }
 
 .title-bar {
@@ -107,19 +108,23 @@
   gap: 1rem;
 }
 
+.left-column {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.right-column {
+  flex: 1;
+}
+
 .form-container {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 1.5rem;
-}
-
-.overview-container {
-  flex: 3;
-}
-
-.thumbnail-container {
-  flex: 1;
+  margin-bottom: 1rem;
 }
 
 h2 {
@@ -246,4 +251,107 @@ select {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* Tags Input Styling */
+.tags-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  min-height: 40px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.remove-tag {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.25rem;
+  color: #888;
+  font-size: 1rem;
+}
+
+/* Additional Details Styling */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-description {
+  color: #666;
+  font-size: 0.875rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.add-button {
+  background-color: #4169e1;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.detail-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.detail-row .form-field {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.remove-detail {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.pagination-button {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 } 

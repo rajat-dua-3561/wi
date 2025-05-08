@@ -20,9 +20,25 @@ export class CreateFromScratchComponent {
   selectedAssetClass: any = '';
   selectedAsset: any = '';
   selectedCategory: any = '';
-  tags: string = '';
   selectedLanguage: any = '';
   thumbnailUrl: string | null = null;
+  
+  // Tags data
+  tagsList: string[] = ['Spills and Falls', 'Spills and Falls', 'Spills and Falls'];
+  tagInput: string = '';
+  
+  // Tools data
+  toolsList: string[] = ['Spills and Falls'];
+  toolInput: string = '';
+  
+  // Safety data
+  safetyList: string[] = ['Spills and Falls'];
+  safetyInput: string = '';
+  
+  // Additional details
+  additionalDetails: {label: string, value: string}[] = [
+    {label: '', value: ''}
+  ];
   
   // Sample data for dropdowns
   plants = [
@@ -81,6 +97,54 @@ export class CreateFromScratchComponent {
     console.log('Proceeding to Smart Steps...');
     // In a real app, you would save the data and navigate to the next step
     // this.router.navigate(['/smart-steps']);
+  }
+  
+  // Methods for tags
+  addTag(event: any) {
+    event.preventDefault();
+    if (this.tagInput.trim()) {
+      this.tagsList.push(this.tagInput.trim());
+      this.tagInput = '';
+    }
+  }
+  
+  removeTag(index: number) {
+    this.tagsList.splice(index, 1);
+  }
+  
+  // Methods for tools
+  addTool(event: any) {
+    event.preventDefault();
+    if (this.toolInput.trim()) {
+      this.toolsList.push(this.toolInput.trim());
+      this.toolInput = '';
+    }
+  }
+  
+  removeTool(index: number) {
+    this.toolsList.splice(index, 1);
+  }
+  
+  // Methods for safety items
+  addSafety(event: any) {
+    event.preventDefault();
+    if (this.safetyInput.trim()) {
+      this.safetyList.push(this.safetyInput.trim());
+      this.safetyInput = '';
+    }
+  }
+  
+  removeSafety(index: number) {
+    this.safetyList.splice(index, 1);
+  }
+  
+  // Methods for additional details
+  addDetail() {
+    this.additionalDetails.push({label: '', value: ''});
+  }
+  
+  removeDetail(index: number) {
+    this.additionalDetails.splice(index, 1);
   }
   
   // Method to handle thumbnail upload
