@@ -1,24 +1,50 @@
 <div class="page-container">
-  <div class="header">
-    <button class="back-button" (click)="goBack()">
-      <i class="fas fa-arrow-left"></i> Back
-    </button>
-    <h1>Create From Video</h1>
+  <div class="navigation-header">
+    <div class="left-section">
+      <button class="back-button" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+    </div>
+    <div class="center-section">
+      <div class="step current">
+        <div class="step-indicator">1</div>
+        <span>Work Instruction Details</span>
+      </div>
+      <div class="step">
+        <div class="step-indicator">2</div>
+        <span>Smart Steps</span>
+      </div>
+      <div class="step">
+        <div class="step-indicator">3</div>
+        <span>PDF Setup</span>
+      </div>
+    </div>
+    <div class="right-section">
+      <button class="proceed-button">Proceed</button>
+    </div>
   </div>
   
-  <div class="content">
-    <div class="upload-section">
-      <h2>Upload Video</h2>
-      <p>Convert your video content into step-by-step work instructions</p>
-      
+  <div class="main-content">
+    <div class="title-section">
+      <div class="title">
+        <span class="sparkle-icon">✨</span>
+        <h1>Document-Based Work Instructions</h1>
+      </div>
+      <p class="subtitle">Convert your documents into interactive work instructions with AI assistance</p>
+    </div>
+    
+    <div class="upload-container">
       <div class="upload-area">
-        <div class="upload-icon">
-          <i class="fas fa-video"></i>
+        <div class="upload-cloud-icon">
+          <i class="fas fa-cloud-upload-alt"></i>
         </div>
-        <img src="Vector.jpg" alt="Vector graphic" class="upload-vector-image">
-        <p>Drag and drop your video here or</p>
-        <button class="upload-button">Browse Files</button>
-        <p class="file-info">Supported formats: MP4, MOV, AVI, WMV (Max 100MB)</p>
+        <img src="Vector.jpg" alt="Vector Placeholder" >
+        <h2>Drag and drop Video to upload</h2>
+        <p class="format-info">Supported formats: MP4, WebM</p>
+        <p class="format-info">1GB(TBD)</p>
+        <button class="upload-button">
+          <i class="fas fa-cloud-upload-alt"></i> Upload
+        </button>
       </div>
     </div>
   </div>

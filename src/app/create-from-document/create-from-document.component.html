@@ -1,24 +1,47 @@
 <div class="page-container">
-  <div class="header">
-    <button class="back-button" (click)="goBack()">
-      <i class="fas fa-arrow-left"></i> Back
-    </button>
-    <h1>Create From Document</h1>
+  <div class="navigation-header">
+    <div class="left-section">
+      <button class="back-button" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+    </div>
+    <div class="center-section">
+      <div class="step completed">
+        <div class="step-indicator">
+          <i class="fas fa-check"></i>
+        </div>
+        <span>Work Instruction Details</span>
+      </div>
+      <div class="step current">
+        <div class="step-indicator">2</div>
+        <span>Smart Steps</span>
+      </div>
+    </div>
+    <div class="right-section">
+      <button class="proceed-button">Proceed</button>
+    </div>
   </div>
   
-  <div class="content">
-    <div class="upload-section">
-      <h2>Upload Document</h2>
-      <p>Import and convert existing documents into digital work instructions</p>
-      
+  <div class="main-content">
+    <div class="title-section">
+      <div class="title">
+        <span class="sparkle-icon">✨</span>
+        <h1>Document-Based Work Instructions</h1>
+      </div>
+      <p class="subtitle">Convert your documents into interactive work instructions with AI assistance</p>
+    </div>
+    
+    <div class="upload-container">
       <div class="upload-area">
-        <div class="upload-icon">
-          <i class="fas fa-file-upload"></i>
+        <div class="upload-cloud-icon">
+          <i class="fas fa-cloud-upload-alt"></i>
         </div>
-        <img src="Vector.jpg" alt="Vector graphic" class="upload-vector-image">
-        <p>Drag and drop your document here or</p>
-        <button class="upload-button">Browse Files</button>
-        <p class="file-info">Supported formats: PDF, DOC, DOCX, XLS, XLSX (Max 20MB)</p>
+        <img src="Vector.jpg" alt="Vector Placeholder" >
+        <h2>Drag and drop documents to upload</h2>
+        <p class="format-info">Supported formats: PDF, Word documents (.doc, .docx), and text files</p>
+        <button class="upload-button">
+          <i class="fas fa-cloud-upload-alt"></i> Upload
+        </button>
       </div>
     </div>
   </div>

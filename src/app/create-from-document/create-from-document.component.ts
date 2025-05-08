@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-from-document',
@@ -10,11 +11,17 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./create-from-document.component.scss']
 })
 export class CreateFromDocumentComponent {
-  constructor() {
+  constructor(private router: Router) {
     console.log('CreateFromDocumentComponent initialized');
   }
   
   goBack() {
     history.back();
+  }
+  
+  proceed() {
+    // Navigate to the next step
+    // this.router.navigate(['/next-page']);
+    console.log('Proceeding to next step');
   }
 } 
