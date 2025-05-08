@@ -6,7 +6,9 @@ import { WorkOrderInstructionsComponent } from './work-order-instructions/work-o
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, WorkOrderInstructionsComponent],
-  template: '<app-work-order-instructions></app-work-order-instructions>',
+  template: `
+    <router-outlet></router-outlet>
+  `,
   styleUrl: './app.component.css'
 })
 export class AppComponent {

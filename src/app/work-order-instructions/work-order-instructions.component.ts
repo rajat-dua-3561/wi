@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-work-order-instructions',
@@ -170,6 +170,8 @@ export class WorkOrderInstructionsComponent {
   selectedUnit = this.units[0]; // Default to 'All'
   unitDropdownOpen = false;
 
+  constructor(private router: Router) {}
+
   togglePlantDropdown() {
     this.plantDropdownOpen = !this.plantDropdownOpen;
   }
@@ -252,4 +254,18 @@ export class WorkOrderInstructionsComponent {
     this.unitDropdownOpen = false;
   }
   
+  navigateToCreateFromVideo() {
+    console.log('Navigating to create from video');
+    this.router.navigate(['/create-from-video']);
+  }
+
+  navigateToCreateFromDocument() {
+    console.log('Navigating to create from document');
+    this.router.navigate(['/create-from-document']);
+  }
+
+  navigateToCreateFromScratch() {
+    console.log('Navigating to create from scratch');
+    this.router.navigate(['/work-instruction-details']);
+  }
 } 

@@ -93,7 +93,7 @@
 
   <!-- Create Options -->
   <div class="create-options">
-    <div class="create-card">
+    <div class="create-card" (click)="navigateToCreateFromVideo()">
       <span class="icon-bg">
         <img src="video.jpg" alt="Video Icon">
       </span>
@@ -103,8 +103,8 @@
       </h3>
       <p>Convert your video content into step-by-step work instructions</p>
     </div>
-    <div class="create-card">
-      <span >
+    <div class="create-card" (click)="navigateToCreateFromDocument()">
+      <span class="icon-bg">
         <img src="document.jpg" alt="Document Icon">
       </span>
       <h3>
@@ -113,8 +113,8 @@
       </h3>
       <p>Import and convert existing documents into digital work instructions</p>
     </div>
-    <div class="create-card">
-      <span >
+    <div class="create-card" (click)="navigateToCreateFromScratch()">
+      <span class="icon-bg">
         <img src="scratch.jpg" alt="Scratch Icon">
       </span>
       <h3>Create From Scratch</h3>
