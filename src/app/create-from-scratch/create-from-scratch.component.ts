@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-work-instruction-details',
+  selector: 'app-create-from-scratch',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './work-instruction-details.component.html',
-  styleUrls: ['./work-instruction-details.component.scss']
+  templateUrl: './create-from-scratch.component.html',
+  styleUrls: ['./create-from-scratch.component.scss']
 })
-export class WorkInstructionDetailsComponent {
+export class CreateFromScratchComponent {
   // Properties for form data
   workInstructionTitle: string = '';
   description: string = '';
   
   constructor() {
-    console.log('WorkInstructionDetailsComponent initialized');
+    console.log('CreateFromScratchComponent initialized');
   }
   
   // Method to handle back button click

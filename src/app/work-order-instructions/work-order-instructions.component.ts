@@ -258,14 +258,14 @@ export class WorkOrderInstructionsComponent {
     console.log('Navigating to create from video');
     this.router.navigate(['/create-from-video']);
   }
-
+  
   navigateToCreateFromDocument() {
     console.log('Navigating to create from document');
     this.router.navigate(['/create-from-document']);
   }
-
+  
   navigateToCreateFromScratch() {
     console.log('Navigating to create from scratch');
-    this.router.navigate(['/work-instruction-details']);
+    this.router.navigate(['/create-from-scratch']);
   }
 } 

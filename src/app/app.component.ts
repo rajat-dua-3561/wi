@@ -1,16 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { WorkOrderInstructionsComponent } from './work-order-instructions/work-order-instructions.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, WorkOrderInstructionsComponent],
-  template: `
-    <router-outlet></router-outlet>
-  `,
-  styleUrl: './app.component.css'
+  imports: [RouterOutlet],
+  template: `<router-outlet></router-outlet>`
 })
-export class AppComponent {
-  title = 'wi';
-}
+export class AppComponent {}

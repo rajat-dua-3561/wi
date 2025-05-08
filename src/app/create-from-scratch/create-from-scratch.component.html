@@ -23,7 +23,7 @@
 
   <div class="work-instruction-content">
     <div class="title-bar">
-      <h1>Work Instruction Details</h1>
+      <h1>Create From Scratch</h1>
       <div class="actions">
         <span class="saved-indicator">All Changes Saved</span>
         <button class="proceed-button" (click)="proceed()">Proceed</button>
@@ -34,8 +34,19 @@
     </div>
 
     <div class="form-container">
-      <h2>This is the Work Instruction Details page</h2>
-      <p>Form implementation will go here...</p>
+      <div class="left-panel">
+        <h2>Overview</h2>
+        
+        <div class="form-field">
+          <label for="title">Title <span class="required">*</span></label>
+          <input type="text" id="title" placeholder="Enter" [(ngModel)]="workInstructionTitle">
+        </div>
+        
+        <div class="form-field">
+          <label for="description">Description</label>
+          <input type="text" id="description" placeholder="Enter" [(ngModel)]="description">
+        </div>
+      </div>
     </div>
   </div>
 </div> 
