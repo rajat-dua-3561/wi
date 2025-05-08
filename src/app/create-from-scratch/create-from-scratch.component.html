@@ -23,7 +23,7 @@
 
   <div class="work-instruction-content">
     <div class="title-bar">
-      <h1>Create From Scratch</h1>
+      <h1>Work Instruction Details</h1>
       <div class="actions">
         <span class="saved-indicator">All Changes Saved</span>
         <button class="proceed-button" (click)="proceed()">Proceed</button>
@@ -33,8 +33,8 @@
       </div>
     </div>
 
-    <div class="form-container">
-      <div class="left-panel">
+    <div class="form-content">
+      <div class="form-container overview-container">
         <h2>Overview</h2>
         
         <div class="form-field">
@@ -45,6 +45,107 @@
         <div class="form-field">
           <label for="description">Description</label>
           <input type="text" id="description" placeholder="Enter" [(ngModel)]="description">
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="plant">Plant <span class="required">*</span></label>
+            <div class="select-wrapper">
+              <select id="plant" [(ngModel)]="selectedPlant">
+                <option value="" disabled selected>Select</option>
+                <option *ngFor="let plant of plants" [value]="plant.id">{{plant.name}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="unit">Unit</label>
+            <div class="select-wrapper">
+              <select id="unit" [(ngModel)]="selectedUnit">
+                <option value="" disabled selected>Select</option>
+                <option *ngFor="let unit of units" [value]="unit.id">{{unit.name}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="location">Location</label>
+            <div class="select-wrapper">
+              <select id="location" [(ngModel)]="selectedLocation">
+                <option value="" disabled selected>Select</option>
+                <option *ngFor="let location of locations" [value]="location.id">{{location.name}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="assetClass">Asset Class</label>
+            <div class="select-wrapper">
+              <select id="assetClass" [(ngModel)]="selectedAssetClass">
+                <option value="" disabled selected>Select</option>
+                <option *ngFor="let assetClass of assetClasses" [value]="assetClass.id">{{assetClass.name}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="asset">Asset</label>
+            <div class="select-wrapper">
+              <select id="asset" [(ngModel)]="selectedAsset">
+                <option value="" disabled selected>Select</option>
+                <option *ngFor="let asset of assets" [value]="asset.id">{{asset.name}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="category">Category <span class="required">*</span></label>
+            <div class="select-wrapper">
+              <select id="category" [(ngModel)]="selectedCategory">
+                <option value="" disabled selected>Operation</option>
+                <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="tags">Tags</label>
+          <input type="text" id="tags" placeholder="Select" [(ngModel)]="tags">
+        </div>
+
+        <div class="form-field">
+          <label for="primaryLanguage">Primary Language <span class="required">*</span></label>
+          <div class="select-wrapper">
+            <select id="primaryLanguage" [(ngModel)]="selectedLanguage">
+              <option value="" disabled selected>Select</option>
+              <option *ngFor="let language of languages" [value]="language.id">{{language.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container thumbnail-container">
+        <h2>Thumbnail</h2>
+        <div class="thumbnail-upload" [class.has-image]="thumbnailUrl">
+          <input type="file" id="thumbnailUpload" accept="image/jpeg,image/png" 
+                 (change)="uploadThumbnail($event)" style="display: none">
+          
+          <div *ngIf="!thumbnailUrl" class="upload-placeholder">
+            <div class="upload-icon">
+              <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <p>Upload image thumbnail</p>
+            <span class="file-info">JPG/PNG max 5MB</span>
+            <button class="upload-button" (click)="triggerFileInput()">Upload</button>
+          </div>
+          
+          <div *ngIf="thumbnailUrl" class="thumbnail-preview">
+            <img [src]="thumbnailUrl" alt="Thumbnail preview">
+            <button class="change-thumbnail" (click)="triggerFileInput()">Change</button>
+          </div>
         </div>
       </div>
     </div>
