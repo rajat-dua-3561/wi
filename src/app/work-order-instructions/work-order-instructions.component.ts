@@ -30,13 +30,14 @@ export class WorkOrderInstructionsComponent {
   workOrders = [
     {
       title: 'Pemex Salina Cruz Refinery',
-      type: 'Operation',
+      type: 'Health and safety',
       author: 'Gustavo Siphron',
       date: '25/04/2025',
       time: '12:30 pm',
       version: '5.0',
       image: 'image1.jpg',
-      favorite: false
+      favorite: false,
+      status: 'Published'
     },
     {
       title: 'Irving Oil Refinery',
@@ -46,7 +47,8 @@ export class WorkOrderInstructionsComponent {
       time: '12:30 pm',
       version: '5.0',
       image: 'image2.jpg',
-      favorite: true
+      favorite: true,
+      status: 'Published'
     },
     {
       title: 'The Thriving Marathon Galveston Bay R...',
@@ -56,7 +58,8 @@ export class WorkOrderInstructionsComponent {
       time: '12:30 pm',
       version: '5.0',
       image: 'image3.jpg',
-      favorite: false
+      favorite: false,
+      status: 'Published'
     },
     {
       title: 'Pemex Salina Cruz Refinery',
@@ -65,7 +68,9 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2023',
       time: '12:30 pm',
       version: '5.0',
-      image: 'image4.jpg'
+      image: 'image4.jpg',
+      favorite: false,
+      status: 'Published'
     },
     {
       title: 'Pemex Salina Cruz Refinery',
@@ -74,7 +79,9 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2023',
       time: '12:30 pm',
       version: '5.0',
-      image: 'image5.jpg'
+      image: 'image5.jpg',
+      favorite: false,
+      status: 'Published'
     },
     {
       title: 'Pemex Salina Cruz Refinery',
@@ -83,7 +90,9 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2023',
       time: '12:30 pm',
       version: '5.0',
-      image: 'image6.jpg'
+      image: 'image6.jpg',
+      favorite: false,
+      status: 'Published'
     },
     {
       title: 'Pemex Salina Cruz Refinery',
@@ -92,7 +101,9 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2023',
       time: '12:30 pm',
       version: '5.0',
-      image: 'image7.jpg'
+      image: 'image7.jpg',
+      favorite: false,
+      status: 'Published'
     },
     {
       title: 'Newly Added Work Order',
@@ -102,7 +113,8 @@ export class WorkOrderInstructionsComponent {
       time: '09:00 am',
       version: '1.0',
       image: 'image3.jpg',
-      favorite: false
+      favorite: false,
+      status: 'Published'
     },
 
     // Add more work orders as needed
@@ -267,5 +279,19 @@ export class WorkOrderInstructionsComponent {
   navigateToCreateFromScratch() {
     console.log('Navigating to create from scratch');
     this.router.navigate(['/create-from-scratch']);
+  }
+
+  // Add a computed property for filtered work orders
+  get filteredWorkOrders() {
+    if (this.selectedStatus === 'Favourites') {
+      return this.workOrders.filter(order => order.favorite);
+    } else {
+      return this.workOrders.filter(order => order.status === this.selectedStatus);
+    }
+  }
+  
+  // Add method to toggle favorites
+  toggleFavorite(order: any) {
+    order.favorite = !order.favorite;
   }
 } 

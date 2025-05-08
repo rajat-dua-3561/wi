@@ -161,11 +161,17 @@
 
   <!-- Work Order Grid -->
   <div class="work-order-grid">
-    <div class="work-order-card" *ngFor="let order of workOrders">
+    <div class="work-order-card" *ngFor="let order of filteredWorkOrders">
       <div class="card-image-wrapper">
         <img [src]="order.image" [alt]="order.title">
-        <span class="favorite-star" *ngIf="order.favorite"><i class="fas fa-star"></i></span>
-        <span class="card-menu"><i class="fas fa-ellipsis-h"></i></span>
+        <div class="card-hover-controls">
+          <span class="favorite-star" [class.active]="order.favorite" (click)="toggleFavorite(order); $event.stopPropagation()">
+            <img [src]="order.favorite ? 'star2.jpg' : 'non-star.jpg'" alt="Favorite">
+          </span>
+          <span class="card-menu">
+            <i class="fas fa-ellipsis-h"></i>
+          </span>
+        </div>
       </div>
       <div class="card-content">
         <h4>{{order.title}}</h4>
