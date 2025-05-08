@@ -35,7 +35,7 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2025',
       time: '12:30 pm',
       version: '5.0',
-      image: 'assets/refinery1.jpg',
+      image: 'image1.jpg',
       favorite: false
     },
     {
@@ -45,7 +45,7 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2025',
       time: '12:30 pm',
       version: '5.0',
-      image: 'assets/refinery2.jpg',
+      image: 'image2.jpg',
       favorite: true
     },
     {
@@ -55,7 +55,7 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2025',
       time: '12:30 pm',
       version: '5.0',
-      image: 'assets/refinery3.jpg',
+      image: 'image3.jpg',
       favorite: false
     },
     {
@@ -65,7 +65,7 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2023',
       time: '12:30 pm',
       version: '5.0',
-      image: 'assets/refinery1.jpg'
+      image: 'image4.jpg'
     },
     {
       title: 'Pemex Salina Cruz Refinery',
@@ -74,7 +74,7 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2023',
       time: '12:30 pm',
       version: '5.0',
-      image: 'assets/refinery1.jpg'
+      image: 'image5.jpg'
     },
     {
       title: 'Pemex Salina Cruz Refinery',
@@ -83,7 +83,7 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2023',
       time: '12:30 pm',
       version: '5.0',
-      image: 'assets/refinery1.jpg'
+      image: 'image6.jpg'
     },
     {
       title: 'Pemex Salina Cruz Refinery',
@@ -92,8 +92,19 @@ export class WorkOrderInstructionsComponent {
       date: '25/04/2023',
       time: '12:30 pm',
       version: '5.0',
-      image: 'assets/refinery1.jpg'
+      image: 'image7.jpg'
     },
+    {
+      title: 'Newly Added Work Order',
+      type: 'Maintenance',
+      author: 'Jane Doe',
+      date: '30/07/2024',
+      time: '09:00 am',
+      version: '1.0',
+      image: 'image3.jpg',
+      favorite: false
+    },
+
     // Add more work orders as needed
   ];
 
