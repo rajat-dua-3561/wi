@@ -143,12 +143,18 @@
       <button [class.active]="selectedStatus === 'Archive'" (click)="selectedStatus = 'Archive'">Archive</button>
     </div>
     <div class="time-filters">
-      <button *ngFor="let filter of timeFilters" [class.active]="selectedTime === filter" (click)="selectedTime = filter">{{filter}}</button>
+      <button [class.active]="selectedTime === 'Today'" (click)="selectedTime = 'Today'">Today</button>
+      <button [class.active]="selectedTime === 'Yesterday'" (click)="selectedTime = 'Yesterday'">Yesterday</button>
+      <button [class.active]="selectedTime === '7D'" (click)="selectedTime = '7D'">7D</button>
+      <button [class.active]="selectedTime === '30D'" (click)="selectedTime = '30D'">30D</button>
+      <button [class.active]="selectedTime === '3M'" (click)="selectedTime = '3M'">3M</button>
+      <button [class.active]="selectedTime === '6M'" (click)="selectedTime = '6M'">6M</button>
+      <button [class.active]="selectedTime === 'Custom'" (click)="selectedTime = 'Custom'">Custom</button>
       <button class="view-toggle" [class.active]="viewMode === 'list'" (click)="viewMode = 'list'">
-        <i class="fas fa-th-list"></i>
+        <img src="list-view.jpg" alt="list-view Placeholder" >
       </button>
       <button class="view-toggle" [class.active]="viewMode === 'grid'" (click)="viewMode = 'grid'">
-        <i class="fas fa-th"></i>
+        <img src="grid-view.jpg" alt="grid-view Placeholder" >
       </button>
     </div>
   </div>
